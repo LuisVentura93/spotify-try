@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Play</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-card>
+              <img src="{{ cancion.image_medium }}"/>
+        <ion-card-content>
+          <ion-card-title>
+              {{ cancion.title }}
+            </ion-card-title>
+          <p>
+              {{ cancion.artist }}
+          </p>
+          <!--<button (click)="playsong();">
+              <ion-icon ios="ios-play" md="md-play"></ion-icon>
+          </button>-->
+          <div id="everything">
+          <button ion-fab icon-only (click)="playsong(); showToggleFun()" *ngIf="showToggle">
+            <ion-icon name="play"></ion-icon  >
+         </button>
+        <button ion-fab  (click)="pausesong(); showToggleFun()" *ngIf="!showToggle" color="danger">
+          <ion-icon name="pause"></ion-icon>
+        </button>
+      </div>
+
+        </ion-card-content>
+      </ion-card>
+
+</ion-content>

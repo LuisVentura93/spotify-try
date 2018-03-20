@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Spotify
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-card *ngFor="let song of songs" navPush="PlayPage" [navParams] = "{ 'song' : song}">
+        <div class="row">
+            <div class="col-sm-3">
+              <img src="{{ song.image_medium }}"/>
+            </div>
+            <div class="col-sm-4">
+        <ion-card-content>
+          <ion-card-title>
+              {{ song.title }}
+            </ion-card-title>
+          <p>
+              {{ song.artist }}
+          </p>
+        </ion-card-content>
+        </div>
+        </div>
+      </ion-card>
+
+</ion-content>
